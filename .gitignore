@@ -1,0 +1,5 @@
+# ignore ALL .out files
+*.out
+
+# ignore vim .swp files
+*.swp
