@@ -36,6 +36,7 @@ int main(){
 	search(1);
 
 	// printing saved subsets
+	// sort(all_subsets.begin(), all_subsets.end());
 	for (int i = 0; i < all_subsets.size(); i++){
 		for (int j = 0; j < all_subsets[i].size(); j++){
 			cout << all_subsets[i][j] << " ";
