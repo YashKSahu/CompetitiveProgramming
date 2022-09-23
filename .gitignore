@@ -3,3 +3,6 @@
 
 # ignore vim .swp files
 *.swp
+
+# ignore vscode workspace file
+*.code-workspace
