@@ -1,5 +1,3 @@
-//A C++ program to implement top-down approach of DP
-//Memoization
 #include <bits/stdc++.h>
 #include <chrono>
 using namespace std;
@@ -25,7 +23,7 @@ void fibonacci(long long int n){
 }
 
 int main(){
-    cout<<"*** Nth Fibonacci Number - DP - Memoization ***\n";
+    cout<<"*** Nth Fibonacci Number ***\n";
     cout<<"Enter N: ";
     long long int n;
     cin>>n;

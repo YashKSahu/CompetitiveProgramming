@@ -5,7 +5,7 @@
 using namespace std;
 using namespace std::chrono;
 
-vector<long long int> fib_dp(100000000);
+vector<long long int> fib_dp(100000000,-1);
 
 long long int fibonacci_logic(long long int n){
     if(fib_dp[n]==-1){
@@ -29,8 +29,8 @@ int main(){
     // unsync the I/O of C and C++.
     ios_base::sync_with_stdio(false);
 
-    for(long long int i=0; i<100000000; i++)
-        fib_dp[i]=-1;
+    // for(long long int i=0; i<100000000; i++)
+    //     fib_dp[i]=-1;
 
     cout<<"*** Nth Fibonacci Number - DP - Memoization ***\n";
     cout<<"Enter N: ";
