@@ -9,6 +9,17 @@
 |:--:| 
 | Source: *geeksforgeeks* |
 
+1. Make it work
+    - visualize it as a tree
+    - implement that tree as a recursion
+        - leaf nodes as base steps
+    - test it
+2. Make it efficient
+    - identify duplicate sub-trees
+    - choose suitable data structure
+    - add new base case to the brute force solution
+    - store return values to dp data structure
+
 ## Un-Optimized Fibonacci
 - Consider the case of calculating $n^{th}$ fibonacci number
 ```cpp
@@ -77,3 +88,4 @@ int fibonacci(int n){
 - https://en.wikipedia.org/wiki/Memoization
 - https://www.geeksforgeeks.org/dynamic-programming/#concepts
 - [FreeCodeCamp - Dynamic Programming - Learn to Solve Algorithmic Problems & Coding Challenges](https://www.youtube.com/watch?v=oBt53YbR9Kk)
+- https://www.geeksforgeeks.org/memset-in-cpp/
