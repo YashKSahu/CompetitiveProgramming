@@ -18,7 +18,6 @@ bool canSum(long long int targetSum, long long int numbers[], long long int n){
         if(canSum(new_targetSum, numbers, n) == true){ 
             dp[targetSum] = true;
             check[targetSum] = 1;
-            
             return true;
         }
     }
