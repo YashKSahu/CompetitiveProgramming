@@ -12,25 +12,22 @@ typedef vector<double> 		vd;
 #define REP(i,a,b) 		for(int i = a; i < b; i++)
 #define PB 			push_back
 
-const int n=4;
 vi permutation;
-bool chosen[n+1];
+bool chosen[10000];
 
-void search() {
+vector<vi> all_premutations;
+
+void search(int n) {
 	if (permutation.size() == n) {
 	// process permutation
+	all_premutations.push_back(permutation);
 	} else {
 		for (int i = 1; i <= n; i++) {
 			if (chosen[i]) continue;
 			chosen[i] = true;
 			permutation.push_back(i);
-			search();
+			search(n);
 			chosen[i] = false;
-			if(permutation.size()>=n){
-				for(auto j:permutation)
-					cout<<j<<" ";
-				cout<<"\n";
-			}
 			permutation.pop_back();
 		}
 	}
@@ -40,7 +37,15 @@ int main(){
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	
-	search();
+	search(4);
+
+	// printing saved permutations
+	for (int i = 0; i < all_premutations.size(); i++){
+		for (int j = 0; j < all_premutations[i].size(); j++){
+			cout << all_premutations[i][j] << " ";
+		}
+		cout<<"\n";
+	} 
 	
 	return 0;
 }
