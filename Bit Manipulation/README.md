@@ -6,8 +6,8 @@ int b = ~a; //inverse
 std::bitset<32> var(b); //save 32-bit binary notation of b in var
 ```
 ## Bit Shift
-$x<<k = x*2^{k}$ <br>
-$x>>k = floor(x/2^{k})$
+- $x$ ${<<}$ $k = {x*2^{k}}$
+- $x>>k = floor(x/2^{k})$
 ```cpp
 int x=13;
 int k=3;
