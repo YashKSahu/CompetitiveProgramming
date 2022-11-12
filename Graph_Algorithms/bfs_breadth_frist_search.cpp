@@ -18,6 +18,7 @@ const int N = 7;
 vector<int> adj[N];
 
 bool visited[N];
+int node_distance[N];
 
 void adjacencyList(){
     cout<<"---------------------------------------------------\n";
@@ -25,14 +26,16 @@ void adjacencyList(){
 
     adj[1].PB(2);
     adj[1].PB(4);
+    adj[2].PB(1);
     adj[2].PB(3);
     adj[2].PB(5);
-    adj[2].PB(6);
     adj[3].PB(2);
-    adj[3].PB(5);
+    adj[3].PB(6);
     adj[4].PB(1);
     adj[5].PB(2);
-    adj[5].PB(3);
+    adj[5].PB(6);
+    adj[6].PB(3);
+    adj[6].PB(5);
 
     for(int i=1; i<N; ++i){
         for(auto node : adj[i])
@@ -50,13 +53,32 @@ void dfs(int s){
         dfs(node);
 }
 
+void bfs(int start_node){
+    visited[start_node] = true;
+    node_distance[start_node] = 0;
+    queue<int> q;
+    q.push(start_node);
+
+    while(!q.empty()){
+        int s = q.front();
+        q.pop();
+        cout<<s<<" -> ";
+        for(auto node:adj[s]){
+            if(visited[node]) continue;
+            visited[node] = true;
+            node_distance[node] = node_distance[s]+1;
+            q.push(node);
+        }
+    }
+}
+
 int main(){
 	ios::sync_with_stdio(0);
     cin.tie(0);
 
     adjacencyList();
-    cout<<"dfs search: start -> ";
-    dfs(1);
+    cout<<"bfs search: start -> ";
+    bfs(1);
     cout<<"end\n";
     cout<<"---------------------------------------------------\n";
 
